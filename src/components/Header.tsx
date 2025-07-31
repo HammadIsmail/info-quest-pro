@@ -110,7 +110,7 @@ const Header = () => {
                 </motion.div>
                 <div>
                   <h1 className="text-xl font-bold text-white">InfoQuestPro</h1>
-                  <p className="text-xs text-white hidden sm:block">Enterprise Solutions</p>
+                  <p className="text-xs font-extrabold  text-white hidden sm:block">Enterprise Solutions</p>
                 </div>
               </div>
             </motion.div>

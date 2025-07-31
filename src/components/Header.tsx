@@ -61,7 +61,7 @@ const Header = () => {
     <>
       {/* Cisco Partner Banner */}
       <motion.div
-        className="bg-gradient-to-r from-orange-500 to-red-500 text-white py-2 px-4 text-center text-sm font-medium"
+        className="bg-gray-700 text-white py-2 px-4 text-center text-sm font-medium"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -74,8 +74,7 @@ const Header = () => {
           >
             <Image src="/cisco.png" alt="Cisco Logo" width={40} height={40} />
             <span>Proud Cisco Partner</span>
-            <span className="hidden sm:inline">•</span>
-            <span className="hidden sm:inline">Delivering Enterprise-Grade Solutions</span>
+    
           </motion.div>
         </div>
       </motion.div>
@@ -111,7 +110,7 @@ const Header = () => {
                 </motion.div>
                 <div>
                   <h1 className="text-xl font-bold text-white">InfoQuestPro</h1>
-                  <p className="text-xs text-gray-300 hidden sm:block">Enterprise Solutions</p>
+                  <p className="text-xs text-white hidden sm:block">Enterprise Solutions</p>
                 </div>
               </div>
             </motion.div>
@@ -127,7 +126,7 @@ const Header = () => {
                 >
                   <motion.a
                     href={item.href}
-                    className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                    className="flex items-center space-x-1 text-white hover:text-white transition-colors duration-200 font-medium"
                     whileHover={{ y: -2 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >

@@ -144,7 +144,7 @@ const HeroSection = () => {
         <motion.div 
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(135deg, rgba(255, 247, 237, 0.95) 0%, rgba(254, 215, 170, 0.85) 30%, rgba(251, 146, 60, 0.75) 70%, rgba(249, 115, 22, 0.8) 100%)"
+background: "linear-gradient(135deg, rgba(255, 250, 245, 0.9) 0%, rgba(255, 232, 200, 0.6) 40%, rgba(254, 202, 140, 0.4) 70%, rgba(253, 186, 116, 0.3) 100%)"
           }}
           animate={{
             background: [
@@ -243,7 +243,7 @@ const HeroSection = () => {
               variants={wordVariants}
             >
               <motion.span 
-                className="bg-gradient-to-r from-yellow-500 via-orange-500 to-red-600 bg-clip-text text-transparent font-extrabold"
+                className="bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-transparent font-extrabold"
                 whileHover={{
                   scale: 1.05,
                   filter: "drop-shadow(0 0 20px rgba(251, 146, 60, 0.5))"
@@ -263,7 +263,7 @@ const HeroSection = () => {
           {/* Subtitle */}
           <motion.div
             ref={subtitleRef}
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl font-semibold text-gray-800 dark:text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed"
             variants={subtitleVariants}
             initial="hidden"
             animate={subtitleInView ? "visible" : "hidden"}
@@ -275,11 +275,10 @@ const HeroSection = () => {
               Your key to strategic success through
             </motion.span>{" "}
             <motion.span 
-              className="inline-block font-semibold text-orange-700 dark:text-orange-800"
+              className="inline-block font-bold text-red-700 "
               variants={wordVariants}
               whileHover={{ 
                 scale: 1.05,
-                color: "#c2410c"
               }}
             >
               cutting-edge analytics,
@@ -291,7 +290,7 @@ const HeroSection = () => {
               enterprise solutions, and digital transformation
             </motion.span>{" "}
             <motion.span 
-              className="inline-block font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent"
+              className="inline-block font-extrabold bg-gradient-to-r from-orange-700 to-red-700 bg-clip-text text-transparent"
               variants={wordVariants}
             >
               powered by industry-leading partnerships.
@@ -316,7 +315,7 @@ const HeroSection = () => {
             <motion.div variants={buttonVariants} whileHover="hover">
               <Button 
                 size="lg"
-                className="group bg-gradient-to-r from-orange-400 to-red-400 hover:from-orange-600 hover:to-red-500 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <motion.span
                   initial={{ opacity: 0 }}
@@ -335,26 +334,25 @@ const HeroSection = () => {
               </Button>
             </motion.div>
             
-            <motion.div variants={buttonVariants} whileHover="hover">
+            <motion.div variants={buttonVariants} whileHover="hover" >
               <Button 
-                variant="outline"
                 size="lg"
-                className="group border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 backdrop-blur-sm"
+                className="group bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <motion.div
-                  className="mr-2"
-                  whileHover={{ scale: 1.2 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <Play className="w-5 h-5" />
-                </motion.div>
                 <motion.span
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 0.7 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <Play className="w-5 h-5" />
+                </motion.span>
+                <motion.div
+                  className="ml-2"
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
                   Watch Demo
-                </motion.span>
+                </motion.div>
               </Button>
             </motion.div>
           </motion.div>
@@ -376,7 +374,7 @@ const HeroSection = () => {
       >
         <div className="w-6 h-10 border-2 border-orange-600 rounded-full flex justify-center backdrop-blur-sm bg-white/20 shadow-lg">
           <motion.div
-            className="w-1 h-3 bg-gradient-to-b from-orange-500 to-red-500 rounded-full mt-2"
+            className="w-1 h-3 bg-gradient-to-b from-orange-500 to-red-600 rounded-full mt-2"
             animate={{
               opacity: [0.5, 1, 0.5],
               scale: [1, 1.2, 1]

@@ -1,12 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ShieldCheck, BarChart3, Cloud, Info } from "lucide-react";
 
 const services = [
   {
     title: "Analytics & Intelligence",
-    icon: <BarChart3 className="h-8 w-8 text-white" />,
+    icon: <BarChart3 className="h-8 w-8 text-white  " />,
     description: "Transform raw data into actionable insights with our advanced analytics platform.",
     features: ["Real-time Dashboards", "Predictive Analytics", "Custom Reports"],
     backContent: "We use AI to turn complex data into real-time insights. Ideal for growth-focused enterprises.",
@@ -20,7 +19,7 @@ const services = [
   },
   {
     title: "Cybersecurity",
-    icon: <ShieldCheck className="h-8 w-8 text-white" />,
+    icon: <ShieldCheck className="h-8 w-8  text-white" />,
     description: "Comprehensive security solutions to protect your digital assets and data.",
     features: ["Threat Detection", "Security Audits", "Compliance Management"],
     backContent: "Stay ahead of evolving cyber threats with 24/7 monitoring and threat intelligence.",
@@ -41,7 +40,7 @@ export default function ServicesSection() {
                 {/* Front Side */}
                 <div className="absolute inset-0 z-10 bg-white rounded-2xl shadow-xl p-6 backface-hidden flex flex-col justify-between">
                   <div>
-                    <div className="bg-gradient-to-br from-orange-500 to-red-500 p-4 rounded-xl inline-block mb-4">
+                    <div className="bg-gradient-to-br  from-orange-500 to-red-500 p-4 rounded-4xl inline-block mb-4">
                       {service.icon}
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>

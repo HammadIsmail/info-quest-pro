@@ -152,19 +152,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Partnership Badge */}
-          <div className="text-center mt-8 pt-8 border-t border-border">
-            <div className="inline-flex items-center px-6 py-3 bg-primary/10 rounded-full text-primary font-medium">
-              <Image 
-                src="/cisco.png" 
-                width={30} 
-                height={30} 
-                alt="Cisco Partner Badge" 
-                className="h-6 w-auto mr-2" 
-              />
-              Certified Cisco Partner • Enterprise Solutions Provider
-            </div>
-          </div>
+         
         </div>
       </div>
     </motion.footer>

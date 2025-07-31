@@ -5,7 +5,6 @@ import { Mail, MapPin, Phone, Linkedin, Twitter, Facebook } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
-import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

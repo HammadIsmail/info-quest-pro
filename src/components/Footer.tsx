@@ -5,6 +5,7 @@ import { Mail, MapPin, Phone, Linkedin, Twitter, Facebook } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -46,8 +47,14 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white bg-gradient-to-b px-3 py-2 rounded-2xl from-orange-500 to-red-500 font-bold text-xl">IQ</span>
+              <div className="w-10 h-10  rounded-lg flex items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="Logo"
+                  width={80}
+                  height={80}
+                  className="rounded-full"
+                />
               </div>
               <span className="text-xl font-bold text-foreground">InfoQuestPro</span>
             </div>
@@ -151,7 +158,19 @@ const Footer = () => {
             </div>
           </div>
 
-         
+          {/* Partnership Badge */}
+          <div className="text-center mt-8 pt-8 border-t border-border">
+            <div className="inline-flex items-center px-6 py-3 bg-primary/10 rounded-full text-primary font-medium">
+              <Image 
+                src="/cisco.png" 
+                width={30} 
+                height={30} 
+                alt="Cisco Partner Badge" 
+                className="h-6 w-auto mr-2" 
+              />
+              Certified Cisco Partner 
+            </div>
+          </div>
         </div>
       </div>
     </motion.footer>

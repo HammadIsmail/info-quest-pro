@@ -15,7 +15,7 @@ const Header = () => {
   const backgroundColor = useTransform(
     scrollY,
     [0, 100],
-    ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.95)"]
+    ["rgba(0, 0, 0, 0)", "rgb(54,65,83)"]
   );
   const backdropBlur = useTransform(scrollY, [0, 100], ["blur(0px)", "blur(20px)"]);
 
@@ -55,8 +55,6 @@ const Header = () => {
     { name: "Partners", href: "#partners" },
   ];
 
-
-
   return (
     <>
       {/* Cisco Partner Banner */}
@@ -74,14 +72,13 @@ const Header = () => {
           >
             <Image src="/cisco.png" alt="Cisco Logo" width={40} height={40} />
             <span>Proud Cisco Partner</span>
-    
           </motion.div>
         </div>
       </motion.div>
 
       {/* Main Navbar */}
       <motion.nav
-        className={`fixed top-2 mx-4  rounded-2xl left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-2 mx-4 rounded-2xl left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled ? "mt-0" : "mt-10"
         }`}
         style={{
@@ -102,15 +99,25 @@ const Header = () => {
             >
               <div className="flex items-center space-x-2">
                 <motion.div
-                  className="w-10 h-10 bg-gradient-to-br rounded-2xl from-orange-500 to-red-500  flex items-center justify-center"
+                  className="w-10 h-10  rounded-2xl flex items-center justify-center"
                   whileHover={{ rotate: [0, -10, 10, 0] }}
                   transition={{ duration: 0.5 }}
                 >
-                  <span className="text-white font-bold  text-lg">IQ</span>
+                  <Image
+                    src="/logo.png"
+                    alt="Logo"
+                    width={80}
+                    height={80}
+                    className="rounded-full"
+                />
                 </motion.div>
                 <div>
-                  <h1 className="text-xl font-bold text-white">InfoQuestPro</h1>
-                  <p className="text-xs font-extrabold  text-white hidden sm:block">Enterprise Solutions</p>
+                  <h1 className={`text-xl font-bold ${isScrolled ? "text-white" : "text-gray-800"}`}>
+                    InfoQuestPro
+                  </h1>
+                  <p className={`text-xs font-extrabold hidden sm:block ${isScrolled ? "text-white" : "text-gray-800"}`}>
+                    Enterprise Solutions
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -126,7 +133,9 @@ const Header = () => {
                 >
                   <motion.a
                     href={item.href}
-                    className="flex items-center space-x-1 text-white hover:text-white transition-colors duration-200 font-medium"
+                    className={`flex items-center space-x-1 hover:text-white transition-colors duration-200 font-medium ${
+                      isScrolled ? "text-white" : "text-gray-800"
+                    }`}
                     whileHover={{ y: -2 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
@@ -143,7 +152,7 @@ const Header = () => {
                   {/* Dropdown Menu */}
                   {item.dropdown && (
                     <motion.div
-                      className={`absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-800 overflow-hidden ${
+                      className={`absolute top-full left-0 mt-2 w-56 bg-gray-700 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-800 overflow-hidden ${
                         activeDropdown === item.name ? "block" : "hidden"
                       }`}
                       initial={{ opacity: 0, y: -10 }}
@@ -171,9 +180,6 @@ const Header = () => {
 
             {/* Partner Logos & CTA */}
             <div className="hidden lg:flex items-center space-x-6">
-              {/* Partner Logos */}
-            
-
               {/* CTA Button */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -188,7 +194,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="lg:hidden p-2 text-white"
+              className={`lg:hidden p-2 ${isScrolled ? "text-white" : "text-gray-800"}`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               whileTap={{ scale: 0.95 }}
             >
@@ -199,7 +205,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <motion.div
-          className={`lg:hidden bg-black/95 backdrop-blur-xl border-t border-gray-800 ${
+          className={`lg:hidden bg-gray-700 backdrop-blur-xl border-t border-gray-800 ${
             isMobileMenuOpen ? "block" : "hidden"
           }`}
           initial={{ opacity: 0, height: 0 }}
@@ -253,8 +259,6 @@ const Header = () => {
                 Get Started
               </Button>
             </motion.div>
-
-          
           </div>
         </motion.div>
       </motion.nav>

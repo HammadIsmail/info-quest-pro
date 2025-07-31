@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-tech.jpg";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { motion,   useInView } from "framer-motion";
 import { useRef } from "react";
 
 const HeroSection = () => {
@@ -13,19 +13,13 @@ const HeroSection = () => {
   const subtitleRef = useRef(null);
   const buttonsRef = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
+ 
 
   const titleInView = useInView(titleRef, { once: true, amount: 0.3 });
   const subtitleInView = useInView(subtitleRef, { once: true, amount: 0.3 });
   const buttonsInView = useInView(buttonsRef, { once: true, amount: 0.3 });
 
-  // Parallax effects
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+
 
   // Animation variants
   const containerVariants = {
@@ -127,12 +121,10 @@ const HeroSection = () => {
       ref={containerRef}
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ opacity, scale }}
     >
       {/* Background Image with Parallax */}
       <motion.div 
         className="absolute inset-0 z-0"
-        style={{ y }}
       >
         <Image
           src={heroImage}
@@ -216,54 +208,20 @@ background: "linear-gradient(135deg, rgba(255, 250, 245, 0.9) 0%, rgba(255, 232,
             animate={titleInView ? "visible" : "hidden"}
           >
             <motion.span 
-              className="inline-block text-gray-700 dark:text-gray-800"
+              className="inline-block text-slate-800 drop-shadow-sm"
               variants={wordVariants}
             >
-              Technology that
+              Empowering Digital Transformation
             </motion.span>{" "}
-            <motion.span 
-              className="inline-block bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 bg-clip-text text-transparent font-extrabold"
-              variants={wordVariants}
-              whileHover={{
-                scale: 1.05,
-                filter: "drop-shadow(0 0 20px rgba(251, 113, 67, 0.5))"
-              }}
-            >
-              helps you
-            </motion.span>
-            <br />
-            <motion.span 
-              className="inline-block text-gray-700 dark:text-gray-800"
-              variants={wordVariants}
-            >
-              shape
-            </motion.span>{" "}
-            <motion.span 
-              className="relative inline-block"
-              variants={wordVariants}
-            >
-              <motion.span 
-                className="bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-transparent font-extrabold"
-                whileHover={{
-                  scale: 1.05,
-                  filter: "drop-shadow(0 0 20px rgba(251, 146, 60, 0.5))"
-                }}
-              >
-                the future
-              </motion.span>
-              <motion.div
-                className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-600 rounded-full"
-                initial={{ scaleX: 0, opacity: 0 }}
-                animate={{ scaleX: 1, opacity: 1 }}
-                transition={{ delay: 1.5, duration: 0.8, ease: "easeOut" as const }}
-              />
-            </motion.span>
+          
+        
+           
           </motion.h1>
 
           {/* Subtitle */}
           <motion.div
             ref={subtitleRef}
-            className="text-xl md:text-2xl font-semibold text-gray-800 dark:text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl font-semibold text-slate-700 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-sm"
             variants={subtitleVariants}
             initial="hidden"
             animate={subtitleInView ? "visible" : "hidden"}
@@ -275,7 +233,7 @@ background: "linear-gradient(135deg, rgba(255, 250, 245, 0.9) 0%, rgba(255, 232,
               Your key to strategic success through
             </motion.span>{" "}
             <motion.span 
-              className="inline-block font-bold text-red-700 "
+              className="inline-block font-bold text-red-800 drop-shadow-sm"
               variants={wordVariants}
               whileHover={{ 
                 scale: 1.05,
@@ -290,7 +248,7 @@ background: "linear-gradient(135deg, rgba(255, 250, 245, 0.9) 0%, rgba(255, 232,
               enterprise solutions, and digital transformation
             </motion.span>{" "}
             <motion.span 
-              className="inline-block font-extrabold bg-gradient-to-r from-orange-700 to-red-700 bg-clip-text text-transparent"
+              className="inline-block font-extrabold bg-gradient-to-r from-orange-800 to-red-800 bg-clip-text text-transparent drop-shadow-sm"
               variants={wordVariants}
             >
               powered by industry-leading partnerships.

@@ -34,6 +34,42 @@ const Footer = () => {
     },
   };
 
+  const services = [
+    {
+      name: "Cyber Security",
+      items: [
+        "Offensive Security",
+        "Network Security",
+        "Endpoint Security",
+        "Data Security",
+        "Vulnerability Management",
+        "Security Compliance Management",
+        "Identity & Access Management",
+        "Secure Monitoring & Management",
+        "Managed Detection & Response"
+      ]
+    },
+    {
+      name: "Software Solutions",
+      items: [
+        "Automation Tools",
+        "ERP Software"
+      ]
+    },
+    {
+      name: "AI Solutions",
+      items: [
+        "AI Agents"
+      ]
+    },
+    {
+      name: "Other Services",
+      items: [
+        "Development Program"
+      ]
+    }
+  ];
+
   return (
     <motion.footer
       ref={ref}
@@ -43,11 +79,11 @@ const Footer = () => {
       className="bg-gray-900 text-white border-t border-border"
     >
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10  rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                 <Image
                   src="/logo.png"
                   alt="Logo"
@@ -81,39 +117,24 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-foreground">Company</h3>
-            <ul className="space-y-4">
-              {["About Us", "Our Services", "Case Studies", "Careers", "Contact"].map((item) => (
-                <li key={item}>
-                  <a 
-                    href="#" 
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-foreground">Resources</h3>
-            <ul className="space-y-4">
-              {["Documentation", "API Reference", "Support Center", "Community", "Blog"].map((item) => (
-                <li key={item}>
-                  <a 
-                    href="#" 
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Services Columns */}
+          {services.map((service, index) => (
+            <div key={index}>
+              <h3 className="text-lg font-semibold mb-6 text-foreground">{service.name}</h3>
+              <ul className="space-y-4">
+                {service.items.map((item, itemIndex) => (
+                  <li key={itemIndex}>
+                    <a 
+                      href="#" 
+                      className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
         {/* Footer Bottom */}

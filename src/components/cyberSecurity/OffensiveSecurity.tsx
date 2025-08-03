@@ -131,7 +131,7 @@ const OffensiveSecurity = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-2xl backdrop-blur-sm" />
             <Image
-              src="/images/cyber/hacking.jpg"
+              src="/images/cyber/hacking.png"
               alt="Cybersecurity Visualization"
               fill
               className="object-cover rounded-2xl opacity-80"
